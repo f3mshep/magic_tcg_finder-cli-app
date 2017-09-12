@@ -28,7 +28,8 @@ Gem::Specification.new do |spec|
   # end
   # spec.bindir        = "exe"
   spec.executables   = 'magic_tcg_finder'
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["lib", "config"]
+  spec.files = ["config/environment.rb","../lib/magic_tcg_finder/command_line_interface.rb", "../lib/magic_tcg_finder/card.rb","../lib/magic_tcg_finder/scraper.rb" ]
 
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 10.0"
