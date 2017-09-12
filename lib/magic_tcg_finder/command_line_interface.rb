@@ -72,39 +72,18 @@ class CommandLine
 		cost = cost.gsub(/\{\d\}/) { |match| match.colorize(:light_black) }
 	end
 
-	def colorize_identity(card)
- 		color = card.color
- 
- 		case color
- 		when "White"
- 			card.color.colorize(:light_yellow)
- 		when "Blue"
- 			card.color.colorize(:light_cyan)
- 		when "Black"
- 			card.color.colorize(:magenta)
- 		when "Red"
- 			card.color.colorize(:red)
- 		when "Green"
- 			card.color.colorize(:green)
- 		when "Multicolor"
- 			card.color.colorize(:yellow)
- 		else
- 			card.color.colorize(:light_black)
- 		end
- 	end
-
 	def load_card(input)
 		chosen_card = Card.all[input - 1]
 		load_attributes(chosen_card) if chosen_card.rules_text.nil?
 		puts "#{chosen_card.name} - #{colorize_cost(chosen_card.cost)}"
 		puts ""
-		puts "Color Identity: #{colorize_identity(chosen_card)}"
+		puts "Color Identity: #{chosen_card.color}"
 		puts "Type: #{chosen_card.card_type}"
 		puts "Rarity: #{chosen_card.rarity}"
 		puts ""
 		puts "#{colorize_cost(chosen_card.rules_text)}"
 		puts "#{chosen_card.flavor_text}"
-		puts "#{chosen_card.combat_stats}" unless chosen_card.combat_stats.nil?
+		puts "#{chosen_card.combat_stats}"
 		puts ""
 		puts "Appears in the following set(s): #{chosen_card.sets.join(', ')}" 
 		puts ""

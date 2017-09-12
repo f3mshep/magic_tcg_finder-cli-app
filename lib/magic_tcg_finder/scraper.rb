@@ -49,9 +49,9 @@ class Scraper
   end
 
   def self.color_finder(cost)
-    colors = {'{W}' =>'White','{U}' => 'Blue','{B}' => 'Black','{R}' => 'Red','{G}' => 'Green'}
+    colors = {'{W}' =>'White'.colorize(:light_yellow),'{U}' => 'Blue'.colorize(:light_cyan),'{B}' => 'Black'.colorize(:magenta),'{R}' => 'Red'.colorize(:red),'{G}' => 'Green'.colorize(:green)}
     matches = 0
-    color_identity = "Colorless"
+    color_identity = "Colorless".colorize(:light_black)
     #Not all cards have a casting cost
     return color_identity if cost.nil?
 
@@ -64,7 +64,7 @@ class Scraper
 
 
     if matches > 1
-      "Multicolor"
+      "Multicolor".colorize(:yellow)
     else
       color_identity
     end
