@@ -1,5 +1,4 @@
-require "magic_tcg_finder/version"
+require_relative '../config/environment'
 
 module MagicTcgFinder
-  # Your code goes here...
 end

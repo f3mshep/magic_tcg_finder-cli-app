@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require_relative "../lib/magic_tcg_finder.rb"
+
+
+CommandLine.new.start_screen
