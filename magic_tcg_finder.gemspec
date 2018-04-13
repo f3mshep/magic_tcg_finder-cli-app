@@ -31,10 +31,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib", "config"]
   spec.files = ["lib/magic_tcg_finder.rb","config/environment.rb","lib/magic_tcg_finder/command_line_interface.rb", "lib/magic_tcg_finder/card.rb","lib/magic_tcg_finder/scraper.rb" ]
 
+  spec.add_runtime_dependency "colorize", ">= 0"
+  spec.add_runtime_dependency "nokogiri", ">= 0"
+
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "nokogiri", ">= 0"
   spec.add_development_dependency "pry", ">= 0"
-  spec.add_development_dependency "colorize", ">= 0"
+
 end
